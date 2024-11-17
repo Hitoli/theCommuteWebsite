@@ -11,6 +11,8 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.core.Page
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.percent
+import org.web.theCommute.models.Theme
+import org.web.theCommute.sections.AboutSection
 import org.web.theCommute.sections.HeroSection
 
 
@@ -18,10 +20,11 @@ import org.web.theCommute.sections.HeroSection
 @Composable
 fun HomePage() {
     Column(
-        modifier = Modifier.background(Colors.WhiteSmoke).fillMaxSize(),
+        modifier = Modifier.background(Theme.BackgrounMain.rgb).fillMaxSize(),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         HeroSection()
+        AboutSection()
     }
 }

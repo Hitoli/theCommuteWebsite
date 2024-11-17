@@ -1,16 +1,17 @@
 package org.web.theCommute.style
 
 import com.varabyte.kobweb.compose.css.Transition
+import com.varabyte.kobweb.compose.css.functions.CSSFilter
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.silk.components.style.ComponentStyleProvider
 import com.varabyte.kobweb.silk.style.CssStyle
 import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.selectors.hover
-import org.jetbrains.compose.web.css.Color
-import org.jetbrains.compose.web.css.ms
-import org.jetbrains.compose.web.css.px
+import org.jetbrains.compose.web.ExperimentalComposeWebApi
+import org.jetbrains.compose.web.css.*
 import org.web.theCommute.models.Theme
 
 val NavigationStyles = CssStyle {
@@ -26,8 +27,28 @@ val NavigationStyles = CssStyle {
 
 }
 
+@OptIn(ExperimentalComposeWebApi::class)
+val BackgroundStyles = CssStyle {
 
+    base {
+        Modifier.transition(Transition.of(property = "styleModifier", duration = 200.ms))
+    }
+
+    hover {
+        Modifier.styleModifier {
+            filter {
+                sepia(50.percent)
+            }
+        }
+    }
+
+
+}
+
+
+@OptIn(ExperimentalComposeWebApi::class)
 val ButtonStyle = CssStyle {
+
 
     base {
         Modifier.height(40.px).width(100.px).border(width = 0.px).borderRadius(5.px).backgroundColor(

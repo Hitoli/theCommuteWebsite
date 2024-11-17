@@ -2,6 +2,9 @@ package org.web.theCommute.sections
 
 import androidx.compose.runtime.*
 import com.varabyte.kobweb.compose.css.*
+import com.varabyte.kobweb.compose.css.functions.CSSFilter
+import com.varabyte.kobweb.compose.css.functions.grayscale
+import com.varabyte.kobweb.compose.css.functions.hueRotate
 import com.varabyte.kobweb.compose.foundation.layout.Arrangement
 import com.varabyte.kobweb.compose.foundation.layout.Box
 import com.varabyte.kobweb.compose.foundation.layout.Column
@@ -9,6 +12,7 @@ import com.varabyte.kobweb.compose.ui.Alignment
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
+import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
 import com.varabyte.kobweb.silk.components.forms.TextInput
@@ -22,9 +26,11 @@ import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import com.varabyte.kobweb.silk.theme.shapes.Shape
 import com.varabyte.kobweb.silk.theme.shapes.clip
+import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.attributes.InputType
 import org.jetbrains.compose.web.attributes.builders.InputAttrsScope
 import org.jetbrains.compose.web.css.*
+import org.jetbrains.compose.web.css.Transition
 import org.jetbrains.compose.web.dom.Button
 import org.jetbrains.compose.web.dom.EmailInput
 import org.jetbrains.compose.web.dom.P
@@ -32,6 +38,7 @@ import org.jetbrains.compose.web.dom.Text
 import org.web.theCommute.components.Header
 import org.web.theCommute.models.Sections
 import org.web.theCommute.models.Theme
+import org.web.theCommute.style.BackgroundStyles
 import org.web.theCommute.style.ButtonStyle
 import org.web.theCommute.utils.Constants
 
@@ -42,32 +49,54 @@ fun HeroSection() {
     var textValue by remember {
         mutableStateOf("")
     }
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        verticalArrangement = Arrangement.Top,
-        horizontalAlignment = Alignment.CenterHorizontally
-    ) {
-        Header()
-        Hero(breakpoint, textValue = textValue, onTextChange = {
-            textValue = it
-        }, onSubmit = {
-            textValue = it
-            println(textValue)
-        })
+    Box(modifier = Modifier.fillMaxSize().id(Sections.Home.id)) {
+        Background()
+        Column(
+            modifier = Modifier.fillMaxSize(),
+            verticalArrangement = Arrangement.Top,
+            horizontalAlignment = Alignment.CenterHorizontally
+        ) {
+            Header()
+            Hero(breakpoint, textValue = textValue, onTextChange = {
+                textValue = it
+            }, onSubmit = {
+                textValue = it
+                println(textValue)
+            })
 
+
+        }
 
     }
+
 }
 
+@OptIn(ExperimentalComposeWebApi::class)
 @Page
 @Composable
-fun MainBackground() {
+fun MainBackground(breakpoint: Breakpoint) {
+    val size = if (breakpoint>=Breakpoint.MD) 80.percent else 50.percent
     Image(
-        modifier = Modifier.fillMaxWidth(80.percent).objectFit(ObjectFit.Cover),
-        src = "hiteshbg.png",
+        modifier = BackgroundStyles.toModifier().fillMaxWidth(size).objectFit(ObjectFit.Cover) .borderRadius(500.px),
+        src = "hiteshbg.jpg",
         description = "hitesh bg"
     )
 }
+
+@OptIn(ExperimentalComposeWebApi::class)
+@Page
+@Composable
+fun Background() {
+
+        Image(
+            modifier = Modifier.fillMaxWidth().objectFit(ObjectFit.Cover),
+            src = "background.jpg",
+            description = "background bg"
+        )
+
+
+}
+
 
 @Page
 @Composable
@@ -112,7 +141,7 @@ fun Hero(breakpoint: Breakpoint, textValue: String, onTextChange: (String) -> Un
                         .margin(top = 10.px, bottom = 10.px, right = 0.px, left = 0.px)
                         .toAttrs()
                 ) {
-                    Text("I make apps and help other market their apps. Also, I document my journey as an app developer on my website. I hope you enjoy your visit here :)")
+                    Text("I make apps and help other market their apps. Also, I document my journey on my website. I hope you enjoy your visit here :)")
                 }
 
                 P(
@@ -170,7 +199,7 @@ fun Hero(breakpoint: Breakpoint, textValue: String, onTextChange: (String) -> Un
                 verticalArrangement = Arrangement.Top,
                 horizontalAlignment = Alignment.CenterHorizontally
             ) {
-                MainBackground()
+                MainBackground(breakpoint)
             }
 
         }
