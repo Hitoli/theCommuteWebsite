@@ -156,18 +156,6 @@ fun Hero(breakpoint: Breakpoint, textValue: String, onTextChange: (String) -> Un
                     )
                 }
 
-                P(
-                    attrs = Modifier.fontFamily(Constants.FONT_FAMILY).fontSize(if (breakpoint>=Breakpoint.LG)16.px else 8.px).color(Color.black).fontStyle(
-                        FontStyle.Italic
-                    )
-                        .margin(top = 5.px, bottom = 5.px, right = 0.px, left = 0.px)
-                        .toAttrs()
-                ) {
-                    Text(
-                        "Just enter your email below"
-                    )
-                }
-
                 TextInput(
                     text = textValue,
                     onTextChange = onTextChange,

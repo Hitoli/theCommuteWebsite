@@ -27,6 +27,28 @@ val NavigationStyles = CssStyle {
 
 }
 
+val aboutImageStyle = CssStyle{
+    base{
+      Modifier.transition(Transition.of("rotate", duration = 200.ms))
+    }
+
+    hover{
+        Modifier.rotate(10.deg)
+    }
+}
+
+val aboutDescription = CssStyle{
+
+    base {
+        Modifier.opacity(50.percent).transition(Transition.of("opacity", duration = 200.ms))
+    }
+
+    hover{
+        Modifier.opacity(100.percent)
+
+    }
+}
+
 @OptIn(ExperimentalComposeWebApi::class)
 val BackgroundStyles = CssStyle {
 

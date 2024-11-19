@@ -13,6 +13,7 @@ import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
 import com.varabyte.kobweb.silk.components.layout.numColumns
 import com.varabyte.kobweb.silk.style.breakpoint.Breakpoint
+import com.varabyte.kobweb.silk.style.toModifier
 import com.varabyte.kobweb.silk.theme.breakpoint.rememberBreakpoint
 import org.jetbrains.compose.web.css.percent
 import org.jetbrains.compose.web.css.px
@@ -22,6 +23,8 @@ import org.web.theCommute.components.Header
 import org.web.theCommute.components.SectionTitle
 import org.web.theCommute.models.Sections
 import org.web.theCommute.models.Theme
+import org.web.theCommute.style.aboutDescription
+import org.web.theCommute.style.aboutImageStyle
 import org.web.theCommute.utils.Constants
 
 
@@ -57,7 +60,7 @@ fun AboutContent(breakpoint: Breakpoint) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         SimpleGrid(
-            modifier = Modifier.fillMaxWidth(if (breakpoint >= Breakpoint.MD) 70.percent else 80.percent)
+            modifier = Modifier.fillMaxWidth(if (breakpoint >= Breakpoint.MD) 80.percent else 90.percent)
                 .align(Alignment.CenterHorizontally), numColumns = numColumns(base = 1, sm = 2)
         ) {
             AboutImage(breakpoint)
@@ -69,11 +72,11 @@ fun AboutContent(breakpoint: Breakpoint) {
 
 @Composable
 fun AboutImage(breakpoint: Breakpoint) {
-    val size = if (breakpoint >= Breakpoint.MD) 300.px else 100.px
+    val size = if (breakpoint >= Breakpoint.MD) 400.px else 100.px
     Image(
-        modifier = Modifier.height(size).width(size).objectFit(ObjectFit.Contain),
-        src = "aboutMe.jpg",
-        description = "background bg"
+        modifier = aboutImageStyle.toModifier().height(size).width(size).objectFit(ObjectFit.Contain),
+        src = "aboutmes.jpg",
+        description = "About me"
     )
 }
 
@@ -85,7 +88,7 @@ fun AboutDescription(breakpoint: Breakpoint) {
         horizontalAlignment = Alignment.Start
     ) {
         P(
-            attrs = Modifier.fontFamily(Constants.FONT_FAMILY)
+            attrs = aboutDescription.toModifier().fontFamily(Constants.FONT_FAMILY)
                 .fontSize(if (breakpoint >= Breakpoint.LG) 18.px else 10.px).color(
                     Theme.MainColor.rgb
                 )

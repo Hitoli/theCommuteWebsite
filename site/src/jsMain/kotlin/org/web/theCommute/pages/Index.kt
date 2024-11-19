@@ -14,6 +14,7 @@ import org.jetbrains.compose.web.css.percent
 import org.web.theCommute.models.Theme
 import org.web.theCommute.sections.AboutSection
 import org.web.theCommute.sections.HeroSection
+import org.web.theCommute.sections.ServiceSections
 
 
 @Page
@@ -26,5 +27,6 @@ fun HomePage() {
     ) {
         HeroSection()
         AboutSection()
+        ServiceSections()
     }
 }
