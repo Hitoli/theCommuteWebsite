@@ -60,10 +60,12 @@ fun AboutContent(breakpoint: Breakpoint) {
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         SimpleGrid(
-            modifier = Modifier.fillMaxWidth(if (breakpoint >= Breakpoint.MD) 80.percent else 90.percent)
-                .align(Alignment.CenterHorizontally), numColumns = numColumns(base = 1, sm = 2)
+            modifier = Modifier.fillMaxWidth(if (breakpoint >= Breakpoint.MD) 80.percent else 100.percent)
+                .align(Alignment.CenterHorizontally), numColumns = numColumns(base = 1, sm = if (breakpoint>Breakpoint.MD)2 else 1)
         ) {
-            AboutImage(breakpoint)
+            if (breakpoint>=Breakpoint.MD){
+                AboutImage(breakpoint)
+            }
             AboutDescription(breakpoint)
         }
 
@@ -84,7 +86,7 @@ fun AboutImage(breakpoint: Breakpoint) {
 fun AboutDescription(breakpoint: Breakpoint) {
     Column(
         modifier = Modifier.fillMaxWidth(),
-        verticalArrangement = Arrangement.Top,
+        verticalArrangement = Arrangement.Center,
         horizontalAlignment = Alignment.Start
     ) {
         P(

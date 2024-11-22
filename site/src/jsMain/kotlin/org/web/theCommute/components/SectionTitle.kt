@@ -26,7 +26,7 @@ fun SectionTitle(modifier: Modifier = Modifier, section: Sections, alignment: Al
                 .textAlign(if (alignment == Alignment.CenterHorizontally) TextAlign.Center else TextAlign.Start)
                 .fontFamily(Constants.FONT_FAMILY).margin(0.px)
                 .margin(topBottom = 0.px)
-                .fontSize(if (breakpoint>=Breakpoint.MD)25.px else 18.px)
+                .fontSize(if (breakpoint>=Breakpoint.MD)25.px else 14.px)
                 .fontWeight(FontWeight.Normal)
                 .color(Theme.MainColor.rgb).toAttrs()
         ) {
@@ -37,7 +37,7 @@ fun SectionTitle(modifier: Modifier = Modifier, section: Sections, alignment: Al
                 .textAlign(if (alignment == Alignment.CenterHorizontally) TextAlign.Center else TextAlign.Start)
                 .fontFamily(Constants.FONT_FAMILY).margin(0.px)
                 .margin(bottom = 10.px, top = 0.px)
-                .fontSize(if (breakpoint>=Breakpoint.MD)50.px else 25.px)
+                .fontSize(if (breakpoint>=Breakpoint.MD)50.px else 20.px)
                 .fontWeight(FontWeight.Bold)
                 .color(Theme.HeroColor.rgb).toAttrs()
         ) {

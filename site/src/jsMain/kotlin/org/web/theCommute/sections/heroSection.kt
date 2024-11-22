@@ -15,6 +15,8 @@ import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
 import com.varabyte.kobweb.compose.ui.toAttrs
 import com.varabyte.kobweb.core.Page
+import com.varabyte.kobweb.silk.components.forms.InputDefaults
+import com.varabyte.kobweb.silk.components.forms.InputSize
 import com.varabyte.kobweb.silk.components.forms.TextInput
 import com.varabyte.kobweb.silk.components.graphics.Image
 import com.varabyte.kobweb.silk.components.layout.SimpleGrid
@@ -159,23 +161,24 @@ fun Hero(breakpoint: Breakpoint, textValue: String, onTextChange: (String) -> Un
                 TextInput(
                     text = textValue,
                     onTextChange = onTextChange,
-                    modifier = Modifier.fillMaxWidth().height(8.percent)
+                    modifier = Modifier.fillMaxWidth(if (breakpoint>Breakpoint.MD)100.percent else 50.percent).height(8.percent)
                         .border(style = LineStyle.Solid, color = Theme.HeroColor.rgb, width = 1.px)
                         .borderRadius(r = 5.px),
                     placeholderColor = PlaceholderColor(Theme.BlackColor.rgb),
                     placeholder = "Email@gmail.com",
-                    focusBorderColor = Theme.MainColor.rgb
+                    focusBorderColor = Theme.MainColor.rgb,
+                    size = if (breakpoint>Breakpoint.MD)InputSize.LG else InputSize.SM
                 )
 
                 Button(
-                    attrs = ButtonStyle.toModifier().onClick {
+                    attrs = ButtonStyle.toModifier().height(if (breakpoint>Breakpoint.MD)50.px else 30.px).width(if (breakpoint>Breakpoint.MD)120.px else 80.px).onClick {
                         onSubmit(textValue)
                     }.toAttrs()
                 ) {
 
                     Link(
                         path = Sections.Contact.path,
-                        modifier = Modifier.color(Colors.White).textDecorationLine(TextDecorationLine.None).fontSize(14.px),
+                        modifier = Modifier.color(Colors.White).textDecorationLine(TextDecorationLine.None).fontSize(if (breakpoint>=Breakpoint.LG)16.px else 10.px),
                         text = "Subscribe"
                     )
                 }

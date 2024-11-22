@@ -73,13 +73,12 @@ val ButtonStyle = CssStyle {
 
 
     base {
-        Modifier.height(40.px).width(100.px).border(width = 0.px).borderRadius(5.px).backgroundColor(
-            Theme.HeroColor.rgb
-        ).color(Colors.White).margin(10.px).transition(Transition.of(property = "width", duration = 200.ms))
+        Modifier.border(width = 0.px).borderRadius(5.px).backgroundColor(Theme.HeroColor.rgb).color(Colors.White)
+            .margin(topBottom = 10.px).transition(Transition.of(property = "width", duration = 200.ms))
     }
     hover {
 
-        Modifier.width(120.px).border(color = Color.black, width = 4.px).borderRadius(2.px)
+        Modifier.width(400.px).border(color = Color.black, width = 4.px).borderRadius(2.px)
 
 
     }
