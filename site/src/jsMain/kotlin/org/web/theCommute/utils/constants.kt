@@ -11,5 +11,7 @@ object Res{
         const val logo = "logoTheCommute.svg"
         const val android = "android.svg"
         const val androidMarketing = "androidMarketing.svg"
+        const val factalLogo = "factalLogo.svg"
+        const val mizuLogo = "logoMizu.svg"
     }
 }

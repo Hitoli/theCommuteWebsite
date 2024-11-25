@@ -68,9 +68,18 @@ val BackgroundStyles = CssStyle {
 }
 
 
-@OptIn(ExperimentalComposeWebApi::class)
-val ButtonStyle = CssStyle {
+val servicesStyle = CssStyle{
+    base{
+      Modifier.transition(Transition.of("border", duration = 200.ms))
+    }
+    hover{
+        Modifier.borderRadius(20.px)
+        .border(width = 2.px, color = Theme.HeroColor.rgb, style = LineStyle.Solid)
+    }
+}
 
+
+val ButtonStyle = CssStyle {
 
     base {
         Modifier.border(width = 0.px).borderRadius(5.px).backgroundColor(Theme.HeroColor.rgb).color(Colors.White)
