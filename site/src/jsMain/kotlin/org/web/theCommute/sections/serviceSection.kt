@@ -26,6 +26,7 @@ import org.web.theCommute.components.SectionTitle
 import org.web.theCommute.models.Sections
 import org.web.theCommute.models.Services
 import org.web.theCommute.models.Theme
+import org.web.theCommute.style.aboutDescription
 import org.web.theCommute.style.aboutImageStyle
 import org.web.theCommute.style.servicesStyle
 import org.web.theCommute.utils.Constants
@@ -85,7 +86,7 @@ fun ServicContent(services: Services, breakpoint: Breakpoint) {
             Text(services.title)
         }
         P(
-            attrs = Modifier.fontFamily(Constants.FONT_FAMILY)
+            attrs = aboutDescription.toModifier().fontFamily(Constants.FONT_FAMILY)
                 .fontSize(if (breakpoint >= Breakpoint.LG) 18.px else 10.px).color(
                     Theme.MainColor.rgb
                 ).color(

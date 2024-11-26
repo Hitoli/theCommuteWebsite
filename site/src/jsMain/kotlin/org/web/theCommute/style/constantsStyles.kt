@@ -1,14 +1,11 @@
 package org.web.theCommute.style
 
 import com.varabyte.kobweb.compose.css.Transition
-import com.varabyte.kobweb.compose.css.functions.CSSFilter
 import com.varabyte.kobweb.compose.ui.Modifier
 import com.varabyte.kobweb.compose.ui.graphics.Colors
 import com.varabyte.kobweb.compose.ui.modifiers.*
 import com.varabyte.kobweb.compose.ui.styleModifier
-import com.varabyte.kobweb.silk.components.style.ComponentStyleProvider
 import com.varabyte.kobweb.silk.style.CssStyle
-import com.varabyte.kobweb.silk.style.base
 import com.varabyte.kobweb.silk.style.selectors.hover
 import org.jetbrains.compose.web.ExperimentalComposeWebApi
 import org.jetbrains.compose.web.css.*
@@ -77,6 +74,17 @@ val servicesStyle = CssStyle{
         .border(width = 2.px, color = Theme.HeroColor.rgb, style = LineStyle.Solid)
     }
 }
+
+val myWorkStyle = CssStyle{
+    base{
+        Modifier.borderRadius(0.px).transition(Transition.of("borderRadius", duration = 400.ms))
+
+    }
+    hover{
+        Modifier.borderRadius(50.px)
+    }
+}
+
 
 
 val ButtonStyle = CssStyle {

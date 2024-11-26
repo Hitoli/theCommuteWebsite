@@ -13,5 +13,7 @@ object Res{
         const val androidMarketing = "androidMarketing.svg"
         const val factalLogo = "factalLogo.svg"
         const val mizuLogo = "logoMizu.svg"
+        const val mizuMockup = "mizus.png"
+        const val factalMockup= "factals.png"
     }
 }
