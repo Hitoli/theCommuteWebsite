@@ -24,23 +24,23 @@ val NavigationStyles = CssStyle {
 
 }
 
-val aboutImageStyle = CssStyle{
-    base{
-      Modifier.transition(Transition.of("rotate", duration = 200.ms))
+val aboutImageStyle = CssStyle {
+    base {
+        Modifier.transition(Transition.of("rotate", duration = 200.ms))
     }
 
-    hover{
+    hover {
         Modifier.rotate(10.deg)
     }
 }
 
-val aboutDescription = CssStyle{
+val aboutDescription = CssStyle {
 
     base {
         Modifier.opacity(50.percent).transition(Transition.of("opacity", duration = 200.ms))
     }
 
-    hover{
+    hover {
         Modifier.opacity(100.percent)
 
     }
@@ -65,26 +65,25 @@ val BackgroundStyles = CssStyle {
 }
 
 
-val servicesStyle = CssStyle{
-    base{
-      Modifier.transition(Transition.of("border", duration = 200.ms))
+val servicesStyle = CssStyle {
+    base {
+        Modifier.transition(Transition.of("border", duration = 200.ms))
     }
-    hover{
+    hover {
         Modifier.borderRadius(20.px)
-        .border(width = 2.px, color = Theme.HeroColor.rgb, style = LineStyle.Solid)
+            .border(width = 2.px, color = Theme.HeroColor.rgb, style = LineStyle.Solid)
     }
 }
 
-val myWorkStyle = CssStyle{
-    base{
+val myWorkStyle = CssStyle {
+    base {
         Modifier.borderRadius(0.px).transition(Transition.of("borderRadius", duration = 400.ms))
 
     }
-    hover{
+    hover {
         Modifier.borderRadius(50.px)
     }
 }
-
 
 
 val ButtonStyle = CssStyle {
@@ -98,5 +97,15 @@ val ButtonStyle = CssStyle {
         Modifier.width(400.px).border(color = Color.black, width = 4.px).borderRadius(2.px)
 
 
+    }
+}
+
+val portfolioNavigationStyle = CssStyle {
+    base {
+        Modifier.color(Theme.MainColor.rgb).transition(Transition.of(property = "color", duration = 200.ms))
+    }
+
+    hover {
+        Modifier.color(Theme.HeroColor.rgb)
     }
 }
