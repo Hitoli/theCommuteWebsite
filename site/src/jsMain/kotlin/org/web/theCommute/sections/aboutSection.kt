@@ -32,7 +32,7 @@ import org.web.theCommute.utils.Constants
 fun AboutSection() {
     val breakpoint = rememberBreakpoint()
     Box(
-        modifier = Modifier.fillMaxSize().id(Sections.About.id).padding(30.px),
+        modifier = Modifier.fillMaxSize().id(Sections.About.id).padding(10.px),
         contentAlignment = Alignment.TopCenter
     ) {
 

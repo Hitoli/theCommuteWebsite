@@ -12,10 +12,7 @@ import com.varabyte.kobweb.core.Page
 import org.jetbrains.compose.web.css.Color
 import org.jetbrains.compose.web.css.percent
 import org.web.theCommute.models.Theme
-import org.web.theCommute.sections.AboutSection
-import org.web.theCommute.sections.HeroSection
-import org.web.theCommute.sections.PortfolioSection
-import org.web.theCommute.sections.ServiceSections
+import org.web.theCommute.sections.*
 
 
 @Page
@@ -30,5 +27,6 @@ fun HomePage() {
         AboutSection()
         ServiceSections()
         PortfolioSection()
+        TestimonialSection()
     }
 }
