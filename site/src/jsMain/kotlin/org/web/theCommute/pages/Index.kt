@@ -28,5 +28,6 @@ fun HomePage() {
         ServiceSections()
         PortfolioSection()
         TestimonialSection()
+        WorkExperienceSection()
     }
 }

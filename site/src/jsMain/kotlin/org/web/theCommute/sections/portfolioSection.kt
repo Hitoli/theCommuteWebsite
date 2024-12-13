@@ -48,8 +48,8 @@ fun PortfolioSection() {
 
     Column(
         modifier = Modifier.id(Sections.Apps.id)
-            .fillMaxWidth(if (breakpoint >= Breakpoint.MD) 80.percent else 100.percent).padding(topBottom = 40.px)
-            .margin(topBottom = 40.px),
+            .fillMaxWidth(if (breakpoint >= Breakpoint.MD) 80.percent else 100.percent).padding(topBottom = 10.px)
+            .margin(topBottom = 20.px),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

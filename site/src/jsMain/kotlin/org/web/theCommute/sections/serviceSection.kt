@@ -38,9 +38,9 @@ fun ServiceSections() {
 
     Column(
         modifier = Modifier.id(Sections.Services.id)
-            .fillMaxWidth(if (breakpoint >= Breakpoint.MD) 70.percent else 90.percent).padding(topBottom = 40.px)
+            .fillMaxWidth(if (breakpoint >= Breakpoint.MD) 70.percent else 90.percent).padding(topBottom = 10.px)
             .border(width = 0.1.px, color = Theme.HeroColor.rgb, style = LineStyle.Solid).borderRadius(20.px)
-            .margin(topBottom = 40.px),
+            .margin(topBottom = 20.px),
         verticalArrangement = Arrangement.Top,
         horizontalAlignment = Alignment.CenterHorizontally
     ) {

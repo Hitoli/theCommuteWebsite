@@ -15,5 +15,7 @@ object Res{
         const val mizuLogo = "logoMizu.svg"
         const val mizuMockup = "mizus.png"
         const val factalMockup= "factals.png"
+        const val azimSir = "AzimSir.jpg"
+        const val gandharvaSir = "GandharvSir.jpg"
     }
 }
