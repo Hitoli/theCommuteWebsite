@@ -6,17 +6,15 @@ enum class WorkExperience(
     var description: String,
     var nameCompany: String,
     var position: String,
+    var number:Int
 ) {
-    AnoopRefrigeration(
-        dateStart = "Dec 2022",
-        dateEnd = "May 2023",
-        description = "• Developed an Inventory Management Android App with Kotlin and Firebase, which streamlined inventory tracking\n" +
-                "and spending for businesses\n" +
-                "• Worked on 12+ screens on technologies like XML, Dagger Hilt, Retrofit and Firebase\n" +
-                "• Attended 5+ client meetings to understand requirements and presented 4+ prototypes\n" +
-                "• Used MVVM architecture and practised separation of concerns to make app scalable",
-        nameCompany = "Anoop Refrigeration",
-        position = "Android Developer"
+    GeeksForGeeks(
+        dateStart = "July 2024",
+        dateEnd = "Present",
+        description = ".Working to add More products to the GFG app",
+        nameCompany = "GeeksForGeeks",
+        position = "Android Developer",
+        number = 3
     ),
     Singsys(
         dateStart = "Oct 2023",
@@ -31,14 +29,22 @@ enum class WorkExperience(
                 "• Solved multiple complex issues like conditional navigation and integrated third-party API like Video SDK\n" +
                 "• Solved 5+ security issues in MOBSF test in production app",
         nameCompany = "Singsys",
-        position = "Software Engineer"
+        position = "Software Engineer",
+        number = 2
     ),
-    GeeksForGeeks(
-        dateStart = "July 2024",
-        dateEnd = "Present",
-        description = ".Working to add More products to the GFG app",
-        nameCompany = "GeeksForGeeks",
-        position = "Android Developer"
-    )
+    AnoopRefrigeration(
+        dateStart = "Dec 2022",
+        dateEnd = "May 2023",
+        description = "• Developed an Inventory Management Android App with Kotlin and Firebase, which streamlined inventory tracking\n" +
+                "and spending for businesses\n" +
+                "• Worked on 12+ screens on technologies like XML, Dagger Hilt, Retrofit and Firebase\n" +
+                "• Attended 5+ client meetings to understand requirements and presented 4+ prototypes\n" +
+                "• Used MVVM architecture and practised separation of concerns to make app scalable",
+        nameCompany = "Anoop Refrigeration",
+        position = "Android Developer",
+        number = 1
+    ),
+
+
 
 }

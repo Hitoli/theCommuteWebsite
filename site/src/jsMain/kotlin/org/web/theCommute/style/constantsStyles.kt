@@ -46,6 +46,31 @@ val aboutDescription = CssStyle {
     }
 }
 
+val workExperienceDescription = CssStyle {
+
+    base {
+        Modifier.opacity(50.percent).color(Theme.MainColor.rgb).transition(Transition.of("opacity", duration = 200.ms),Transition.of("color", duration = 200.ms))
+    }
+
+    hover {
+        Modifier.opacity(100.percent).color(Color.white)
+
+    }
+}
+
+val workExperiencePara = CssStyle {
+
+    base {
+        Modifier.background(Theme.BackgrounMain.rgb).transition(Transition.of("background", duration = 200.ms))
+    }
+
+    hover {
+        Modifier.background(Theme.HeroColor.rgb)
+
+    }
+}
+
+
 @OptIn(ExperimentalComposeWebApi::class)
 val BackgroundStyles = CssStyle {
 
