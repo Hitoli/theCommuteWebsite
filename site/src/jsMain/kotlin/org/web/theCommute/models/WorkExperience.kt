@@ -14,7 +14,7 @@ enum class WorkExperience(
         description = ".Working to add More products to the GFG app",
         nameCompany = "GeeksForGeeks",
         position = "Android Developer",
-        number = 3
+        number = 1
     ),
     Singsys(
         dateStart = "Oct 2023",
@@ -42,7 +42,7 @@ enum class WorkExperience(
                 "• Used MVVM architecture and practised separation of concerns to make app scalable",
         nameCompany = "Anoop Refrigeration",
         position = "Android Developer",
-        number = 1
+        number = 3
     ),
 
 
